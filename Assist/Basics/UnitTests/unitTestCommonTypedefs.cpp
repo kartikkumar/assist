@@ -24,45 +24,54 @@
  *
  *    Changelog
  *      YYMMDD    Author            Comment
- *      130211    K. Kumar          File created; migrated code from MabSimulations project.
+ *      130211    K. Kumar          File created.
  *
  *    References
  *
  *    Notes
+ *      These tests are simply to ensure that the typedef definitions are not accidentally altered.
  *
  */
 
-#ifndef GENERAL_C_PLUS_PLUS_TOOLS_COMMON_TYPEDEFS_H
-#define GENERAL_C_PLUS_PLUS_TOOLS_COMMON_TYPEDEFS_H
+#define BOOST_TEST_MAIN
 
 #include <map>
+#include <typeinfo>
 #include <utility>
+
+#include <boost/test/unit_test.hpp>
 
 #include <Eigen/Core>
 
-#include <Tudat/Mathematics/BasicMathematics/linearAlgebraTypes.h>
+#include "Assist/Basics/commonTypedefs.h"
 
-namespace general_c_plus_plus_tools
+namespace assist
 {
-namespace basics
+namespace unit_tests
 {
 
-//! Typedef for Eigen Vector of length 12.
-typedef Eigen::Matrix< double, 12, 1 > Vector12d;
+BOOST_AUTO_TEST_SUITE( test_common_typedefs )
 
-//! Typdef for double-key, double-value map.
-typedef std::map< double, double > DoubleKeyDoubleValueMap;
+//! Test definition of common typedefs.
+BOOST_AUTO_TEST_CASE( testCommonTypedefs )
+{
+    // Check if typedefs are defined as required.
+    BOOST_CHECK( typeid( basics::Vector12d ) == typeid( Eigen::Matrix< double, 12, 1 > ) );
 
-//! Typedef for double-key, double-value pair.
-typedef std::pair< double, double > DoubleKeyDoubleValuePair;
+    BOOST_CHECK( typeid( basics::DoubleKeyDoubleValueMap )
+                 == typeid( std::map< double, double > ) );
 
-//! Typedef for double-key, Vector6d-value map.
-typedef std::map< double, Eigen::Vector3d > DoubleKeyVector3dValueMap;
+    BOOST_CHECK( typeid( basics::DoubleKeyDoubleValuePair )
+                 == typeid( std::pair< double, double > ) );
 
-//! Typedef for double-key, Vector3d-value map.
-typedef std::map< double, tudat::basic_mathematics::Vector6d > DoubleKeyVector6dValueMap;
+    BOOST_CHECK( typeid( basics::DoubleKeyVector3dValueMap )
+                 == typeid( std::map< double, Eigen::Vector3d > ) );
 
-} // namespace basics
-} // namespace general_c_plus_plus_tools
+    BOOST_CHECK( typeid( basics::DoubleKeyVector6dValueMap )
+                 == typeid( std::map< double, Eigen::Matrix< double, 6, 1 > > ) );
+}
 
-#endif // GENERAL_C_PLUS_PLUS_TOOLS_COMMON_TYPEDEFS_H
+BOOST_AUTO_TEST_SUITE_END( )
+
+} // namespace unit_tests
+} // namespace assist

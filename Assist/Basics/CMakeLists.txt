@@ -26,6 +26,7 @@
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
  #      130211    K. Kumar          Adapted file to work with GeneralTools/Basics.
+ #      130320    K. Kumar          Renamed static library to assist*.
  #
  #    References
  #
@@ -45,18 +46,18 @@ set(BASICS_HEADERS
 )
 
 # Add static library.
-add_library(general_c_plus_plus_tools_basics STATIC ${BASICS_SOURCES} ${BASICS_HEADERS})
-setup_library_target(general_c_plus_plus_tools_basics "${SRCROOT}${BASICSDIR}")
+add_library(assist_basics STATIC ${BASICS_SOURCES} ${BASICS_HEADERS})
+setup_library_target(assist_basics "${SRCROOT}${BASICSDIR}")
 
 # Add unit tests.
 add_executable(test_Basics "${SRCROOT}${BASICSDIR}/UnitTests/unitTestBasics.cpp")
 setup_unit_test_target(test_Basics "${SRCROOT}${BASICSDIR}")
-target_link_libraries(test_Basics general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
+target_link_libraries(test_Basics assist_basics ${Boost_LIBRARIES})
 
 add_executable(test_CommonTypedefs "${SRCROOT}${BASICSDIR}/UnitTests/unitTestCommonTypedefs.cpp")
 setup_unit_test_target(test_CommonTypedefs "${SRCROOT}${BASICSDIR}")
-target_link_libraries(test_CommonTypedefs general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
+target_link_libraries(test_CommonTypedefs assist_basics ${Boost_LIBRARIES})
 
 add_executable(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}/UnitTests/unitTestComparisonFunctions.cpp")
 setup_unit_test_target(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}")
-target_link_libraries(test_ComparisonFunctions general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
+target_link_libraries(test_ComparisonFunctions assist_basics ${Boost_LIBRARIES})

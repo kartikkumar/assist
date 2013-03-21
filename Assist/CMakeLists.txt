@@ -27,6 +27,7 @@
  #      110820    S.M. Persson      File created.
  #      111025    K. Kumar          Adapted for GeneralTools project.
  #      130320    K. Kumar          Renamed project to GeneralCPlusPlusTools.
+ #      130320    K. Kumar          Renamed project to Assist.
  #
  #    References
  #
@@ -37,16 +38,16 @@
 cmake_minimum_required( VERSION 2.6 )
 
 # Specify project name.
-project( GeneralCPlusPlusTools )
+project( Assist )
 
 # Set module path to local CMake scripts.
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../CMakeModules)
 
 # Set root-directory for code to current source directory.
 set(CODEROOT "${CMAKE_CURRENT_SOURCE_DIR}/..")
 
 # Define the basic input (trunk).
-set(SRCROOT "${CODEROOT}/GeneralCPlusPlusTools")
+set(SRCROOT "${CODEROOT}/Assist")
 
 # Set lib and bin directories where static libraries and unit tests are built.
 set(LIBROOT "${CODEROOT}/lib")

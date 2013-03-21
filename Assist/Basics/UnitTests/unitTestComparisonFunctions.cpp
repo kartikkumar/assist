@@ -39,9 +39,9 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "GeneralCPlusPlusTools/Basics/comparisonFunctions.h"
+#include "Assist/Basics/comparisonFunctions.h"
 
-namespace general_c_plus_plus_tools
+namespace assist
 {
 namespace unit_tests
 {
@@ -344,4 +344,4 @@ BOOST_AUTO_TEST_CASE( testCheckNegativeFunctionForNonNegativeDouble )
 BOOST_AUTO_TEST_SUITE_END( )
 
 } // namespace unit_tests
-} // namespace general_c_plus_plus_tools
+} // namespace assist

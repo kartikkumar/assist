@@ -1,7 +1,7 @@
-General C++ Tools
+Assist
 =============
 
-This repository catalogues miscellaneous General C++ tools that I have written for my research.
+This repository catalogues miscellaneous C++ tools that I have authored to ASSIST my research (well if you can Boost your C++ code, why not assist it too?!).
 
 These tools are work-in-progress, and as such, I provide no assurances that they achieve the intended results in the manner conceived (in other words, don't blame me if you use any of these tools and they don't turn out to work as you expected).
 

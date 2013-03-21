@@ -34,12 +34,12 @@
  *          http://en.wikipedia.org/wiki/Full_width_at_half_maximum, last accessed: 8th Mar, 2013.
  *
  *    Notes
- *      A unit test is needed for the getGeneralCPlusPlusToolsRootPath() function.
+ *      A unit test is needed for the getAssistRootPath() function.
  *
  */
 
-#ifndef GENERAL_C_PLUS_PLUS_TOOLS_BASICS_H
-#define GENERAL_C_PLUS_PLUS_TOOLS_BASICS_H
+#ifndef ASSIST_BASICS_H
+#define ASSIST_BASICS_H
 
 #include <cmath>
 #include <string>
@@ -47,23 +47,23 @@
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
-#include "GeneralCPlusPlusTools/Basics/commonTypedefs.h"
+#include "Assist/Basics/commonTypedefs.h"
 
-namespace general_c_plus_plus_tools
+namespace assist
 {
 namespace basics
 {
 
-//! Get root-path for GeneralCPlusPlusTools directory.
+//! Get root-path for Assist directory.
 /*!
- * Returns root-path corresponding with root-directory of GeneralCPlusPlusTools as a string with
+ * Returns root-path corresponding with root-directory of Assist as a string with
  * trailing slash included.
- * \return GeneralCPlusPlusTools root-path.
+ * \return Assist root-path.
  */
-static inline std::string getGeneralCPlusPlusToolsRootPath( )
+static inline std::string getAssistRootPath( )
 {
-#ifdef GENERAL_C_PLUS_PLUS_TOOLS_CUSTOM_ROOT_PATH
-    return std::string( GENERAL_C_PLUS_PLUS_TOOLS_CUSTOM_ROOT_PATH );
+#ifdef ASSIST_CUSTOM_ROOT_PATH
+    return std::string( ASSIST_CUSTOM_ROOT_PATH );
 #else
     // Declare file path string assigned to filePath.
     // __FILE__ only gives the absolute path in the header file!
@@ -198,6 +198,6 @@ inline double computeGravitationalParameter( const double massOfBody )
 }
 
 } // namespace basics
-} // namespace general_c_plus_plus_tools
+} // namespace assist
 
-#endif // GENERAL_C_PLUS_PLUS_TOOLS_BASICS_H
+#endif // ASSIST_BASICS_H

@@ -43,16 +43,16 @@
 
 #include <Tudat/Mathematics/BasicMathematics/linearAlgebraTypes.h>
 
-#include "GeneralCPlusPlusTools/Astrodynamics/body.h"
+#include "Assist/Astrodynamics/body.h"
 
-namespace general_c_plus_plus_tools
+namespace assist
 {
 namespace unit_tests
 {
 
 BOOST_AUTO_TEST_SUITE( test_body )
 
-//! Test implementation of general body containing 3D state (position, velocity) and time.
+//! Test implementation of  body containing 3D state (position, velocity) and time.
 BOOST_AUTO_TEST_CASE( testBodyCreationAndUpdatingWithTime )
 {
     // Set name of body.
@@ -124,7 +124,7 @@ BOOST_AUTO_TEST_CASE( testBodyCreationAndUpdatingWithTime )
     BOOST_CHECK_EQUAL( testBody->getCurrentTime( ), updatedTime );
 }
 
-//! Test implementation of general body containing 3D state (position, velocity) and no time.
+//! Test implementation of  body containing 3D state (position, velocity) and no time.
 BOOST_AUTO_TEST_CASE( testBodyCreationAndUpdatingWithoutTime )
 {
     // Set name of body.
@@ -193,4 +193,4 @@ BOOST_AUTO_TEST_CASE( testBodyCreationAndUpdatingWithoutTime )
 BOOST_AUTO_TEST_SUITE_END( )
 
 } // namespace unit_tests
-} // namespace general_c_plus_plus_tools
+} // namespace assist

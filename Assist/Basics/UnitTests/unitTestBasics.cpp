@@ -41,10 +41,10 @@
 #include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 
-#include "GeneralCPlusPlusTools/Basics/basics.h"
-#include "GeneralCPlusPlusTools/Basics/commonTypedefs.h"
+#include "Assist/Basics/basics.h"
+#include "Assist/Basics/commonTypedefs.h"
 
-namespace general_c_plus_plus_tools
+namespace assist
 {
 namespace unit_tests
 {
@@ -205,4 +205,4 @@ BOOST_AUTO_TEST_CASE( testComputeGravitationalParameterFunction )
 BOOST_AUTO_TEST_SUITE_END( )
 
 } // namespace unit_tests
-} // namespace general_c_plus_plus_tools
+} // namespace assist

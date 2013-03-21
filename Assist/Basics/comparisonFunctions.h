@@ -37,10 +37,10 @@
 #include <stdexcept>
 #include <string>
 
-#ifndef GENERAL_C_PLUS_PLUS_TOOLS_COMPARISON_FUNCTIONS_H
-#define GENERAL_C_PLUS_PLUS_TOOLS_COMPARISON_FUNCTIONS_H
+#ifndef ASSIST_COMPARISON_FUNCTIONS_H
+#define ASSIST_COMPARISON_FUNCTIONS_H
 
-namespace general_c_plus_plus_tools
+namespace assist
 {
 namespace basics
 {
@@ -135,6 +135,6 @@ inline DataType checkNegative( const DataType dataPoint, const std::string name 
 }
 
 } // namespace basics
-} // namespace general_c_plus_plus_tools
+} // namespace assist
 
-#endif // GENERAL_C_PLUS_PLUS_TOOLS_COMPARISON_FUNCTIONS_H
+#endif // ASSIST_COMPARISON_FUNCTIONS_H
