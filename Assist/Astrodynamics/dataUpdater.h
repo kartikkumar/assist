@@ -37,9 +37,9 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "GeneralCPlusPlusTools/Astrodynamics/body.h"
+#include "Assist/Astrodynamics/body.h"
 
-#include "GeneralCPlusPlusTools/Basics/commonTypedefs.h"
+#include "Assist/Basics/commonTypedefs.h"
 
 namespace assist
 {
