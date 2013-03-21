@@ -43,9 +43,9 @@
 
 #include <Tudat/Mathematics/BasicMathematics/linearAlgebraTypes.h>
 
-#include "GeneralTools/Astrodynamics/body.h"
+#include "GeneralCPlusPlusTools/Astrodynamics/body.h"
 
-namespace general_tools
+namespace general_c_plus_plus_tools
 {
 namespace unit_tests
 {
@@ -193,4 +193,4 @@ BOOST_AUTO_TEST_CASE( testBodyCreationAndUpdatingWithoutTime )
 BOOST_AUTO_TEST_SUITE_END( )
 
 } // namespace unit_tests
-} // namespace general_tools
+} // namespace general_c_plus_plus_tools

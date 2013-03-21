@@ -25,7 +25,7 @@
  #    Changelog
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
- #      130211    K. Kumar          Adapted file to work with GeneralTools/Astrodynamics.
+ #      130211    K. Kumar          Adapted file to work with GeneralTools/Basics.
  #
  #    References
  #
@@ -33,26 +33,30 @@
  #
 
 # Set source files.
-set(ASTRODYNAMICS_SOURCES
-  "${SRCROOT}${ASTRODYNAMICSDIR}/void.cpp"
+set(BASICS_SOURCES
+  "${SRCROOT}${BASICSDIR}/void.cpp"
 )
 
 # Set header files.
-set(ASTRODYNAMICS_HEADERS
-  "${SRCROOT}${ASTRODYNAMICSDIR}/body.h"
-  "${SRCROOT}${ASTRODYNAMICSDIR}/dataUpdater.h"
+set(BASICS_HEADERS
+  "${SRCROOT}${BASICSDIR}/basics.h"
+  "${SRCROOT}${BASICSDIR}/commonTypedefs.h"
+  "${SRCROOT}${BASICSDIR}/comparisonFunctions.h"
 )
 
 # Add static library.
-add_library(general_c_plus_plus_tools_astrodynamics STATIC ${ASTRODYNAMICS_SOURCES} ${ASTRODYNAMICS_HEADERS})
-setup_library_target(general_c_plus_plus_tools_astrodynamics "${SRCROOT}${ASTRODYNAMICSDIR}")
+add_library(general_c_plus_plus_tools_basics STATIC ${BASICS_SOURCES} ${BASICS_HEADERS})
+setup_library_target(general_c_plus_plus_tools_basics "${SRCROOT}${BASICSDIR}")
 
 # Add unit tests.
-add_executable(test_Body "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestBody.cpp")
-setup_unit_test_target(test_Body "${SRCROOT}${ASTRODYNAMICSDIR}")
-target_link_libraries(test_Body general_c_plus_plus_tools_astrodynamics general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
+add_executable(test_Basics "${SRCROOT}${BASICSDIR}/UnitTests/unitTestBasics.cpp")
+setup_unit_test_target(test_Basics "${SRCROOT}${BASICSDIR}")
+target_link_libraries(test_Basics general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
 
-add_executable(test_DataUpdater "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestDataUpdater.cpp")
-setup_unit_test_target(test_DataUpdater "${SRCROOT}${ASTRODYNAMICSDIR}")
-target_link_libraries(test_DataUpdater general_c_plus_plus_tools_astrodynamics general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
+add_executable(test_CommonTypedefs "${SRCROOT}${BASICSDIR}/UnitTests/unitTestCommonTypedefs.cpp")
+setup_unit_test_target(test_CommonTypedefs "${SRCROOT}${BASICSDIR}")
+target_link_libraries(test_CommonTypedefs general_c_plus_plus_tools_basics ${Boost_LIBRARIES})
 
+add_executable(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}/UnitTests/unitTestComparisonFunctions.cpp")
+setup_unit_test_target(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}")
+target_link_libraries(test_ComparisonFunctions general_c_plus_plus_tools_basics ${Boost_LIBRARIES})

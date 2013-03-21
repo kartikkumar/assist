@@ -30,7 +30,7 @@
  *
  *    Notes
  *      The unit tests in this file are not strictly "unit tests", but rather system tests, since
- *      they depend on the code implemented in GeneralTools/Astrodynamics/body.h.
+ *      they depend on the code implemented in GeneralCPlusPlusTools/Astrodynamics/body.h.
  *
  */
 
@@ -43,10 +43,10 @@
 
 #include <TudatCore/Basics/testMacros.h>
 
-#include "GeneralTools/Astrodynamics/body.h"
-#include "GeneralTools/Astrodynamics/dataUpdater.h"
+#include "GeneralCPlusPlusTools/Astrodynamics/body.h"
+#include "GeneralCPlusPlusTools/Astrodynamics/dataUpdater.h"
 
-namespace general_tools
+namespace general_c_plus_plus_tools
 {
 namespace unit_tests
 {
@@ -102,4 +102,4 @@ BOOST_AUTO_TEST_CASE( testDataUpdater )
 BOOST_AUTO_TEST_SUITE_END( )
 
 } // namespace unit_tests
-} // namespace general_tools
+} // namespace general_c_plus_plus_tools

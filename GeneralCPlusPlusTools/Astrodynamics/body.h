@@ -37,8 +37,8 @@
  *
  */
 
-#ifndef GENERAL_TOOLS_BODY_H
-#define GENERAL_TOOLS_BODY_H
+#ifndef GENERAL_C_PLUS_PLUS_TOOLS_BODY_H
+#define GENERAL_C_PLUS_PLUS_TOOLS_BODY_H
 
 #include <string>
 
@@ -49,7 +49,7 @@
 
 #include <Tudat/Mathematics/BasicMathematics/linearAlgebraTypes.h>
 
-namespace general_tools
+namespace general_c_plus_plus_tools
 {
 namespace astrodynamics
 {
@@ -137,6 +137,6 @@ private:
 typedef boost::shared_ptr< Body > BodyPointer;
 
 } // namespace astrodynamics
-} // namespace general_tools
+} // namespace general_c_plus_plus_tools
 
-#endif // GENERAL_TOOLS_BODY_H
+#endif // GENERAL_C_PLUS_PLUS_TOOLS_BODY_H

@@ -32,16 +32,16 @@
  *
  */
 
-#ifndef GENERAL_TOOLS_DATA_UPDATER_H
-#define GENERAL_TOOLS_DATA_UPDATER_H
+#ifndef GENERAL_C_PLUS_PLUS_TOOLS_DATA_UPDATER_H
+#define GENERAL_C_PLUS_PLUS_TOOLS_DATA_UPDATER_H
 
 #include <boost/shared_ptr.hpp>
 
-#include "GeneralTools/Astrodynamics/body.h"
+#include "GeneralCPlusPlusTools/Astrodynamics/body.h"
 
-#include "GeneralTools/Basics/commonTypedefs.h"
+#include "GeneralCPlusPlusTools/Basics/commonTypedefs.h"
 
-namespace general_tools
+namespace general_c_plus_plus_tools
 {
 namespace astrodynamics
 {
@@ -101,6 +101,6 @@ private:
 typedef boost::shared_ptr< DataUpdater > DataUpdaterPointer;
 
 } // namespace astrodynamics
-} // namespace general_tools
+} // namespace general_c_plus_plus_tools
 
-#endif // GENERAL_TOOLS_DATA_UPDATER_H
+#endif // GENERAL_C_PLUS_PLUS_TOOLS_DATA_UPDATER_H

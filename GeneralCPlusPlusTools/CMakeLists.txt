@@ -40,7 +40,7 @@ cmake_minimum_required( VERSION 2.6 )
 project( GeneralCPlusPlusTools )
 
 # Set module path to local CMake scripts.
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../../CMakeModules)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
 
 # Set root-directory for code to current source directory.
 set(CODEROOT "${CMAKE_CURRENT_SOURCE_DIR}/..")
@@ -120,8 +120,8 @@ endmacro(setup_unit_test_target)
 # Set the main sub-directories.
 set(ASTRODYNAMICSDIR "/Astrodynamics")
 set(BASICSDIR "/Basics")
-set(DATABASEDIR "/Database")
-set(INPUTOUTPUTDIR "/InputOutput")
+#set(DATABASEDIR "/Database")
+#set(INPUTOUTPUTDIR "/InputOutput")
 
 # Include the top-level directories.
 include_directories(AFTER
