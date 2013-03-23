@@ -317,13 +317,13 @@ BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionRunTimeErrorForStrings )
 }
 
 //
-// Test checkGreaterThan() function.
+// Test checkInRange() function.
 //
 
 //! Test implementation of function to check if integer is within specified range.
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForIntegers )
 {
-    // Set integer to check and range upper and lower bounds.
+    // Set integer to check range upper and lower bounds.
     const int integerToCheck = 10;
     const std::string integerToCheckName = "Test integer";
     const int lowerBound = -5;
@@ -341,7 +341,7 @@ BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForIntegers )
 //! Test implementation of function to check out-of-range integer.
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForOutOfRangeInteger )
 {
-    // Set integer to check and range upper and lower bounds.
+    // Set integer to check range upper and lower bounds.
     const int integerToCheck = 10;
     const std::string integerToCheckName = "Test integer";
     const int lowerBound = 12;
@@ -365,9 +365,10 @@ BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForOutOfRangeInteger )
     BOOST_CHECK( isErrorThrown );
 }
 
+//! Test implementation of function to check if double is within specified range.
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForDoubles )
 {
-    // Set double to check and range upper and lower bounds.
+    // Set double to check range upper and lower bounds.
     const double doubleToCheck = -12.3;
     const std::string doubleToCheckName = "Test double";
     const double lowerBound = -24.6;
@@ -385,7 +386,7 @@ BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForDoubles )
 //! Test implementation of function to check out-of-range double.
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForOutOfRangeDouble )
 {
-    // Set double to check and range upper and lower bounds.
+    // Set double to check range upper and lower bounds.
     const double doubleToCheck = -12.3;
     const std::string doubleToCheckName = "Test double";
     const double lowerBound = -4.6;
@@ -411,7 +412,7 @@ BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForOutOfRangeDouble )
 
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForStrings )
 {
-    // Set string to check and range upper and lower bounds.
+    // Set string to check range upper and lower bounds.
     const std::string stringToCheck = "ball";
     const std::string stringToCheckName = "Test string";
     const std::string lowerBound = "apple";
@@ -429,7 +430,7 @@ BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForStrings )
 //! Test implementation of function to check out-of-range string.
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForOutOfRangeString )
 {
-    // Set string to check and range upper and lower bounds.
+    // Set string to check range upper and lower bounds.
     const std::string stringToCheck = "dog";
     const std::string stringToCheckName = "Test string";
     const std::string lowerBound = "apple";
@@ -452,6 +453,10 @@ BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForOutOfRangeString )
     // Check that test failed and run-time error was thrown.
     BOOST_CHECK( isErrorThrown );
 }
+
+//
+// Test checkPositive() function.
+//
 
 //! Test implementation of function to check if integer is positive.
 BOOST_AUTO_TEST_CASE( testCheckPositiveFunctionForIntegers )
@@ -532,6 +537,10 @@ BOOST_AUTO_TEST_CASE( testCheckPositiveFunctionForNonPositiveDouble )
     // Check that test failed and run-time error was thrown.
     BOOST_CHECK( isErrorThrown );
 }
+
+//
+// Test checkNegative() function.
+//
 
 //! Test implementation of function to check if integer is negative.
 BOOST_AUTO_TEST_CASE( testCheckNegativeFunctionForIntegers )
