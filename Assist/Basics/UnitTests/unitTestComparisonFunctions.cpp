@@ -25,6 +25,8 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      130314    K. Kumar          File created.
+ *      130323    K. Kumar          Completed unit tests for checkGreaterThan() and checkLessThan()
+ *                                  functions.
  *
  *    References
  *
@@ -47,6 +49,276 @@ namespace unit_tests
 {
 
 BOOST_AUTO_TEST_SUITE( test_comparison_functions )
+
+//
+// Test checkGreaterThan() function.
+//
+
+//! Test implementation of function to check if integer is greater than a lower bound.
+BOOST_AUTO_TEST_CASE( testCheckGreaterThanFunctionForIntegers )
+{
+    // Set integer to check against lower bound.
+    const int integerToCheck = 10;
+    const std::string integerToCheckName = "Test integer";
+    const int lowerBound = -5;
+
+    // Check if integer is greater than lower bound. The function should return the integer, to
+    // indicate that the check passed successfully.
+    const int checkedInteger = basics::checkGreaterThan(
+                integerToCheck, integerToCheckName, lowerBound );
+
+    // Check that test passed and integer was returned.
+    BOOST_CHECK_EQUAL( checkedInteger, integerToCheck );
+}
+
+//! Test run-time error in checkGreaterThan() function for integers.
+BOOST_AUTO_TEST_CASE( testCheckGreaterThanFunctionRunTimeErrorForIntegers )
+{
+    // Set integer to check against lower bound.
+    const int integerToCheck = 10;
+    const std::string integerToCheckName = "Test integer";
+    const int lowerBound = 20;
+
+    // Check if integer is out of range. The function should throw a run-time error, which we will
+    // attempt to catch.
+    bool isErrorThrown = false;
+
+    try
+    {
+        basics::checkGreaterThan( integerToCheck, integerToCheckName, lowerBound );
+    }
+
+    catch ( std::runtime_error& error )
+    {
+        isErrorThrown = true;
+    }
+
+    // Check that test failed and run-time error was thrown.
+    BOOST_CHECK( isErrorThrown );
+}
+
+//! Test implementation of function to check if double is greater than a lower bound.
+BOOST_AUTO_TEST_CASE( testCheckGreaterThanFunctionForDoubles)
+{
+    // Set double to check against lower bound.
+    const double doubleToCheck = 10.6;
+    const std::string doubleToCheckName = "Test double";
+    const double lowerBound = -5.2;
+
+    // Check if double is greater than lower bound. The function should return the double, to
+    // indicate that the check passed successfully.
+    const double checkedDouble = basics::checkGreaterThan(
+                doubleToCheck, doubleToCheckName, lowerBound );
+
+    // Check that test passed and double was returned.
+    BOOST_CHECK_EQUAL( checkedDouble, doubleToCheck );
+}
+
+//! Test run-time error in checkGreaterThan() function for doubles.
+BOOST_AUTO_TEST_CASE( testCheckGreaterThanFunctionRunTimeErrorForDoubles )
+{
+    // Set double to check against lower bound.
+    const double doubleToCheck = 10.6;
+    const std::string doubleToCheckName = "Test double";
+    const double lowerBound = 25.2;
+
+    // Check if double is out of range. The function should throw a run-time error, which we will
+    // attempt to catch.
+    bool isErrorThrown = false;
+
+    try
+    {
+        basics::checkGreaterThan( doubleToCheck, doubleToCheckName, lowerBound );
+    }
+
+    catch ( std::runtime_error& error )
+    {
+        isErrorThrown = true;
+    }
+
+    // Check that test failed and run-time error was thrown.
+    BOOST_CHECK( isErrorThrown );
+}
+
+//! Test implementation of function to check if string is greater than a lower bound.
+BOOST_AUTO_TEST_CASE( testCheckGreaterThanFunctionForStrings )
+{
+    // Set string to check against lower bound.
+    const std::string stringToCheck = "dog";
+    const std::string stringToCheckName = "Test string";
+    const std::string lowerBound = "cat";
+
+    // Check if string is greater than lower bound. The function should return the string, to
+    // indicate that the check passed successfully.
+    const std::string checkedString = basics::checkGreaterThan(
+                stringToCheck, stringToCheckName, lowerBound );
+
+    // Check that test passed and string was returned.
+    BOOST_CHECK_EQUAL( checkedString, stringToCheck );
+}
+
+//! Test run-time error in checkGreaterThan() function for strings.
+BOOST_AUTO_TEST_CASE( testCheckGreaterThanFunctionRunTimeErrorForStrings )
+{
+    // Set string to check against lower bound.
+    const std::string stringToCheck = "dog";
+    const std::string stringToCheckName = "Test string";
+    const std::string lowerBound = "mouse";
+
+    // Check if string is out of range. The function should throw a run-time error, which we will
+    // attempt to catch.
+    bool isErrorThrown = false;
+
+    try
+    {
+        basics::checkGreaterThan( stringToCheck, stringToCheckName, lowerBound );
+    }
+
+    catch ( std::runtime_error& error )
+    {
+        isErrorThrown = true;
+    }
+
+    // Check that test failed and run-time error was thrown.
+    BOOST_CHECK( isErrorThrown );
+}
+
+//
+// Test checkLessThan() function.
+//
+
+//! Test implementation of function to check if integer is less than an upper bound.
+BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionForIntegers )
+{
+    // Set integer to check against upper bound.
+    const int integerToCheck = -5;
+    const std::string integerToCheckName = "Test integer";
+    const int upperBound = 10;
+
+    // Check if integer is less than lower bound. The function should return the integer, to
+    // indicate that the check passed successfully.
+    const int checkedInteger = basics::checkLessThan(
+                integerToCheck, integerToCheckName, upperBound );
+
+    // Check that test passed and integer was returned.
+    BOOST_CHECK_EQUAL( checkedInteger, integerToCheck );
+}
+
+//! Test run-time error in checkLessThan() function for integers.
+BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionRunTimeErrorForIntegers )
+{
+    // Set integer to check against upper bound.
+    const int integerToCheck = 10;
+    const std::string integerToCheckName = "Test integer";
+    const int upperBound = -5;
+
+    // Check if integer is out of range. The function should throw a run-time error, which we will
+    // attempt to catch.
+    bool isErrorThrown = false;
+
+    try
+    {
+        basics::checkLessThan( integerToCheck, integerToCheckName, upperBound );
+    }
+
+    catch ( std::runtime_error& error )
+    {
+        isErrorThrown = true;
+    }
+
+    // Check that test failed and run-time error was thrown.
+    BOOST_CHECK( isErrorThrown );
+}
+
+//! Test implementation of function to check if double is less than a lower bound.
+BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionForDoubles )
+{
+    // Set double to check against upper bound.
+    const double doubleToCheck = -10.6;
+    const std::string doubleToCheckName = "Test double";
+    const double upperBound = 5.2;
+
+    // Check if double is less than upper bound. The function should return the double, to
+    // indicate that the check passed successfully.
+    const double checkedDouble = basics::checkLessThan(
+                doubleToCheck, doubleToCheckName, upperBound );
+
+    // Check that test passed and double was returned.
+    BOOST_CHECK_EQUAL( checkedDouble, doubleToCheck );
+}
+
+//! Test run-time error in checkLessThan() function for doubles.
+BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionRunTimeErrorForDoubles )
+{
+    // Set double to check against upper bound.
+    const double doubleToCheck = 10.6;
+    const std::string doubleToCheckName = "Test double";
+    const double upperBound = -5.2;
+
+    // Check if double is out of range. The function should throw a run-time error, which we will
+    // attempt to catch.
+    bool isErrorThrown = false;
+
+    try
+    {
+        basics::checkLessThan( doubleToCheck, doubleToCheckName, upperBound );
+    }
+
+    catch ( std::runtime_error& error )
+    {
+        isErrorThrown = true;
+    }
+
+    // Check that test failed and run-time error was thrown.
+    BOOST_CHECK( isErrorThrown );
+}
+
+//! Test implementation of function to check if string is greater than a lower bound.
+BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionForStrings )
+{
+    // Set string to check against upper bound.
+    const std::string stringToCheck = "cat";
+    const std::string stringToCheckName = "Test string";
+    const std::string upperBound = "dog";
+
+    // Check if string is less than lower bound. The function should return the string, to
+    // indicate that the check passed successfully.
+    const std::string checkedString = basics::checkLessThan(
+                stringToCheck, stringToCheckName, upperBound );
+
+    // Check that test passed and string was returned.
+    BOOST_CHECK_EQUAL( checkedString, stringToCheck );
+}
+
+//! Test run-time error in checkLessThan() function for strings.
+BOOST_AUTO_TEST_CASE( testCheckLessThanFunctionRunTimeErrorForStrings )
+{
+    // Set string to check against upper bound.
+    const std::string stringToCheck = "mouse";
+    const std::string stringToCheckName = "Test string";
+    const std::string upperBound = "cat";
+
+    // Check if string is out of range. The function should throw a run-time error, which we will
+    // attempt to catch.
+    bool isErrorThrown = false;
+
+    try
+    {
+        basics::checkLessThan( stringToCheck, stringToCheckName, upperBound );
+    }
+
+    catch ( std::runtime_error& error )
+    {
+        isErrorThrown = true;
+    }
+
+    // Check that test failed and run-time error was thrown.
+    BOOST_CHECK( isErrorThrown );
+}
+
+//
+// Test checkGreaterThan() function.
+//
 
 //! Test implementation of function to check if integer is within specified range.
 BOOST_AUTO_TEST_CASE( testCheckInRangeFunctionForIntegers )
