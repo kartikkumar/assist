@@ -46,3 +46,4 @@ build/
 lib/
 qtcreator-build/
 CMakeLists.txt.user
+*.sublime-*
