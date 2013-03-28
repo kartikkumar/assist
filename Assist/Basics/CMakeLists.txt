@@ -43,6 +43,7 @@ set(BASICS_HEADERS
   "${SRCROOT}${BASICSDIR}/basics.h"
   "${SRCROOT}${BASICSDIR}/commonTypedefs.h"
   "${SRCROOT}${BASICSDIR}/comparisonFunctions.h"
+  "${SRCROOT}${BASICSDIR}/operatorOverloadFunctions.h"
 )
 
 # Add static library.
@@ -61,3 +62,7 @@ target_link_libraries(test_CommonTypedefs assist_basics ${Boost_LIBRARIES})
 add_executable(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}/UnitTests/unitTestComparisonFunctions.cpp")
 setup_unit_test_target(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}")
 target_link_libraries(test_ComparisonFunctions assist_basics ${Boost_LIBRARIES})
+
+add_executable(test_OperatorOverloadFunctions "${SRCROOT}${BASICSDIR}/UnitTests/unitTestOperatorOverloadFunctions.cpp")
+setup_unit_test_target(test_OperatorOverloadFunctions "${SRCROOT}${BASICSDIR}")
+target_link_libraries(test_OperatorOverloadFunctions assist_basics ${Boost_LIBRARIES})

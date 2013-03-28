@@ -43,6 +43,76 @@ namespace assist
 namespace basics
 {
 
+//
+// Define non-const versions of boiler plate functions.
+//
+
+//! Overload == operator.
+template< typename DataStruct >
+inline bool operator==( DataStruct& dataStruct1, DataStruct& dataStruct2 )
+{
+    return operator==( const_cast< DataStruct& >( dataStruct1 ), 
+    	const_cast< DataStruct& >( dataStruct2 ) );
+}
+
+// //! Overload != operator.
+// template< typename DataStruct >
+// inline bool operator!=( DataStruct& dataStruct1, DataStruct& dataStruct2 )
+// {
+//     return !operator==( dataStruct1, dataStruct2 );
+// }
+
+// //! Overload > operator.
+// template< typename DataStruct >
+// inline bool operator>( DataStruct& dataStruct1, DataStruct& dataStruct2 )
+// {
+//     return operator<( dataStruct1, dataStruct1 );
+// }
+
+//
+// Define const versions of boiler plate functions.
+//
+
+// //! Overload != operator.
+// template< typename DataStruct >
+// inline bool operator!=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
+// {
+//     return operator!=( static_cast< DataStruct& >( dataStruct1 ), 
+//     	static_cast< DataStruct& >( dataStruct2 ) );
+// }
+
+// //! Overload <= operator.
+// inline bool operator<=( const DataStruct& dataStruct1,
+//                  const DataStruct& dataStruct2 );
+
+// //! Overload >= operator.
+// inline bool operator>=( const DataStruct& dataStruct1,
+//                  const DataStruct& dataStruct2 );
+
+// //! Overload == operator for shared-pointers.
+// inline bool operator==( const DataStructPointer& dataStruct1,
+//                  const DataStructPointer& dataStruct2 );
+
+// //! Overload != operator for shared-pointers.
+// inline bool operator!=( const DataStructPointer& dataStruct1,
+//                  const DataStructPointer& dataStruct2 );
+
+// //! Overload < operator for shared-pointers.
+// inline bool operator<( const DataStructPointer& dataStruct1,
+//                 const DataStructPointer& dataStruct2 );
+
+// //! Overload > operator for shared-pointers.
+// inline bool operator>( const DataStructPointer& dataStruct1,
+//                 const DataStructPointer& dataStruct2 );
+
+// //! Overload <= operator for shared-pointers.
+// inline bool operator<=( const DataStructPointer& dataStruct1,
+//                  const DataStructPointer& dataStruct2 );
+
+// //! Overload >= operator for shared-pointers.
+// inline bool operator>=( const DataStructPointer& dataStruct1,
+//                  const DataStructPointer& dataStruct2 );
+
 } // namespace basics
 } // namespace assist
 
