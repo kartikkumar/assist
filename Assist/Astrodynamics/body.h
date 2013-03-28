@@ -70,6 +70,9 @@ private:
 
 public:
 
+    // Set Eigen macro to correctly align class with fixed-size vectorizable types.
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+
     //! Constructor taking the body's name, current state vector, and associated current time.
     /*!
      * Constructor taking the body's name, current state vector, and associated current time
