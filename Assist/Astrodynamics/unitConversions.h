@@ -24,60 +24,45 @@
  *
  *    Changelog
  *      YYMMDD    Author            Comment
- *      130323    K. Kumar          File created.
- *      130328    K. Kumar          Completed boiler-plate functions.
+ *      130211    K. Kumar          File created; migrated code from basics.h.
  *
  *    References
+ *      Wikipedia. Full width at half maximum,
+ *          http://en.wikipedia.org/wiki/Full_width_at_half_maximum, last accessed: 8th Mar, 2013.
  *
  *    Notes
- *      The functions in this file serve as boiler plate code to overload operators for 
- *      classes/structs.
  *
  */
 
-
-#ifndef ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
-#define ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 
 namespace assist
 {
-namespace basics
+namespace astrodynamics
 {
 
-//
-// Overload operators for pass-by-reference.
-//
-
-//! Overload != operator.
-template< typename DataStruct >
-inline bool operator!=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
+//! Convert Julian years to seconds.
+/*!
+ * Converts Julian years to seconds.
+ * \param julianYears Julian years to convert.
+ * \return Number of seconds corresponding to Julian years given as input.
+ */
+inline double convertJulianYearsToSeconds( const double julianYears )
 {
-    return !( dataStruct1 == dataStruct2 );
-}   
-
-//! Overload > operator.
-template< typename DataStruct >
-inline bool operator>( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
-{
-    return ( !( dataStruct1 < dataStruct2 ) || !( dataStruct1 == dataStruct1 ) );
-    // return !( dataStruct1 < dataStruct2 );
+    return julianYears * tudat::basic_astrodynamics::physical_constants::JULIAN_YEAR;
 }
 
-//! Overload <= operator.
-template< typename DataStruct >
-inline bool operator<=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
+//! Convert seconds to Julian years.
+/*!
+ * Converts seconds to Julian years.
+ * \param seconds Seconds to convert.
+ * \return Number of Julian years corresponding to seconds given as input.
+ */
+inline double convertSecondsToJulianYears( const double seconds )
 {
-    return ( ( dataStruct1 < dataStruct2 ) || ( dataStruct1 == dataStruct1 ) );
-}
+    return seconds / tudat::basic_astrodynamics::physical_constants::JULIAN_YEAR;
+}	
 
-//! Overload >= operator.
-template< typename DataStruct >
-inline bool operator>=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
-{
-    return !( dataStruct1 < dataStruct1 );
-}
 
-} // namespace basics
+} // namespace astrodynamics
 } // namespace assist
-
-#endif // ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H

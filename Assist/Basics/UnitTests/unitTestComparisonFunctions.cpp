@@ -41,6 +41,7 @@
 
 #include <boost/test/unit_test.hpp>
 
+#include "Assist/Basics/commonTypedefs.h"
 #include "Assist/Basics/comparisonFunctions.h"
 
 namespace assist
@@ -620,6 +621,65 @@ BOOST_AUTO_TEST_CASE( testCheckNegativeFunctionForNonNegativeDouble )
 
     // Check that test failed and run-time error was thrown.
     BOOST_CHECK( isErrorThrown );
+}
+
+//! Test implementation of functor to compare two values in a DoubleKeyDoubleValue map.
+BOOST_AUTO_TEST_CASE( testDoubleKeyDoubleValueMapValueComparisonFunctor )
+{
+    // Set double-key, double-value map.
+    basics::DoubleKeyDoubleValueMap testMap;
+    testMap[ -2.1 ] = 0.99;
+    testMap[ 1.6 ] = -9.44;
+    testMap[ 3.2 ] = 12.7;
+
+    // Declare functor object for testing purposes.
+    basics::CompareDoubleKeyDoubleValueMapValues comparisonFunctor;
+
+    // Declare map iterators.
+    basics::DoubleKeyDoubleValueMap::iterator mapIterator1 = testMap.begin( );
+    basics::DoubleKeyDoubleValueMap::iterator mapIterator2 = testMap.begin( );
+    mapIterator2++;
+    basics::DoubleKeyDoubleValueMap::iterator mapIterator3 = testMap.begin( );
+    mapIterator3++;
+    mapIterator3++;
+
+    // Run a few checks to ensure that functor is performing as expected.
+    BOOST_CHECK( comparisonFunctor( *mapIterator2, *mapIterator1 ) );
+    BOOST_CHECK( comparisonFunctor( *mapIterator2, *mapIterator3 ) );
+    BOOST_CHECK( !comparisonFunctor( *mapIterator3, *mapIterator1 ) );
+
+    // Check that comparing the same value yields false (strictly "less than" comparison).
+    BOOST_CHECK( !comparisonFunctor( *mapIterator1, *mapIterator1 ) );
+}
+
+//! Test implementation of functor to compare two values in a DoubleKeyDoubleValue map wrt a
+//! reference point.
+BOOST_AUTO_TEST_CASE( testDoubleKeyDoubleValueMapValueRelativeDistanceComparisonFunctor )
+{
+    // Set double-key, double-value map.
+    basics::DoubleKeyDoubleValueMap testMap;
+    testMap[ -2.1 ] = 0.99;
+    testMap[ 1.6 ] = -9.44;
+    testMap[ 3.2 ] = 12.7;
+
+    // Declare functor object for testing purposes.
+    basics::CompareDoubleKeyDoubleValueMapRelativeDistances comparisonFunctor( 1.2 );
+
+    // Declare map iterators.
+    basics::DoubleKeyDoubleValueMap::iterator mapIterator1 = testMap.begin( );
+    basics::DoubleKeyDoubleValueMap::iterator mapIterator2 = testMap.begin( );
+    mapIterator2++;
+    basics::DoubleKeyDoubleValueMap::iterator mapIterator3 = testMap.begin( );
+    mapIterator3++;
+    mapIterator3++;
+
+    // Run a few checks to ensure that functor is performing as expected.
+    BOOST_CHECK( !comparisonFunctor( *mapIterator2, *mapIterator1 ) );
+    BOOST_CHECK( comparisonFunctor( *mapIterator2, *mapIterator3 ) );
+    BOOST_CHECK( !comparisonFunctor( *mapIterator3, *mapIterator1 ) );
+
+    // Check that comparing the same value yields false (strictly "less than" comparison).
+    BOOST_CHECK( !comparisonFunctor( *mapIterator1, *mapIterator1 ) );
 }
 
 BOOST_AUTO_TEST_SUITE_END( )

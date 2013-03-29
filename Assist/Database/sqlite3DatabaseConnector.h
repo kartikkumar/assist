@@ -31,10 +31,6 @@
  *      SQLite3++, http://code.google.com/p/sqlite3pp/, last accessed: 12th Feb, 2013.
  *
  *    Notes
- *      To use this wrapper, you must have the SQLite3 C-interface configured to be accessible
- *      within your project.
- *
- *      Unit tests have to still be written for the wrapper class.
  *
  */
 
@@ -59,6 +55,10 @@ namespace database
 /*!
  * This class is a simple C++ wrapper for the C-interface for sqlite3. Inspiration is drawn from
  * the SQLite3++ interface (SQLite++, 2013).
+ * \note To use this wrapper, you must have the SQLite3 C-interface configured to be accessible
+ *       within your project.
+ * \note Unit tests have to still be written for the wrapper class.
+ * \note WARNING: The implementation of this class is incomplete; use judiciously!
  */
 class Sqlite3DatabaseConnector
 {

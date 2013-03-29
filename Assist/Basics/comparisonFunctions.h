@@ -154,6 +154,70 @@ inline DataType checkNegative( const DataType dataPoint, const std::string name 
     return dataPoint;
 }
 
+//! Functor to compare two values in a DoubleKeyDoubleValue map.
+/*!
+ * This functor compares two values stored in a DoubleKeyDoubleValue map. The functor returns true
+ * if the first value is less than the second.
+ */
+class CompareDoubleKeyDoubleValueMapValues
+{
+public:
+
+    //! Compare values.
+    /*!
+     * Compares two values, given as entries in a DoubleKeyDoubleValue map.
+     * \return True if value1 is less than value2.
+     */
+    bool operator( )( DoubleKeyDoubleValuePair keyValuePair1,
+                      DoubleKeyDoubleValuePair keyValuePair2 )
+    {
+        return keyValuePair1.second < keyValuePair2.second;
+    }
+
+private:
+protected:
+};
+
+//! Functor to compare two values in a DoubleKeyDoubleValue map, wrt a common reference point.
+/*!
+ * This functor compares two values stored in a DoubleKeyDoubleValue map with respect to a common
+ * reference point. The functor evaluates the Euclidean norm of both values wrt the reference.
+ * The functor returns true if the first distance is closer to the reference than the
+ * second.
+ */
+class CompareDoubleKeyDoubleValueMapRelativeDistances
+{
+public:
+
+    //! Constructor taking reference.
+    /*!
+     * Constructor taking a reference point.
+     * \param aReferencePoint Reference point.
+     */
+    CompareDoubleKeyDoubleValueMapRelativeDistances( const double aReferencePoint )
+        : referencePoint( aReferencePoint )
+    { }
+
+    //! Compare distances wrt reference point.
+    /*!
+     * Compares two distances wrt to specified reference point, given as values in a
+     * DoubleKeyDoubleValue map.
+     * \return True if distance1 is less than distance2.
+     */
+    bool operator( )( DoubleKeyDoubleValuePair distance1,
+                      DoubleKeyDoubleValuePair distance2 )
+    {
+        return std::fabs( distance1.second - referencePoint )
+                < std::fabs( distance2.second - referencePoint );
+    }
+
+protected:
+private:
+
+    //! Reference point.
+    const double referencePoint;
+};
+
 } // namespace basics
 } // namespace assist
 

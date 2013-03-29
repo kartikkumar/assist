@@ -42,7 +42,6 @@
 #include <boost/test/unit_test.hpp>
 
 #include "Assist/Basics/basics.h"
-#include "Assist/Basics/commonTypedefs.h"
 
 namespace assist
 {
@@ -50,95 +49,6 @@ namespace unit_tests
 {
 
 BOOST_AUTO_TEST_SUITE( test_basics )
-
-//! Test implementation of functor to compare two values in a DoubleKeyDoubleValue map.
-BOOST_AUTO_TEST_CASE( testDoubleKeyDoubleValueMapValueComparisonFunctor )
-{
-    // Set double-key, double-value map.
-    basics::DoubleKeyDoubleValueMap testMap;
-    testMap[ -2.1 ] = 0.99;
-    testMap[ 1.6 ] = -9.44;
-    testMap[ 3.2 ] = 12.7;
-
-    // Declare functor object for testing purposes.
-    basics::CompareDoubleKeyDoubleValueMapValues comparisonFunctor;
-
-    // Declare map iterators.
-    basics::DoubleKeyDoubleValueMap::iterator mapIterator1 = testMap.begin( );
-    basics::DoubleKeyDoubleValueMap::iterator mapIterator2 = testMap.begin( );
-    mapIterator2++;
-    basics::DoubleKeyDoubleValueMap::iterator mapIterator3 = testMap.begin( );
-    mapIterator3++;
-    mapIterator3++;
-
-    // Run a few checks to ensure that functor is performing as expected.
-    BOOST_CHECK( comparisonFunctor( *mapIterator2, *mapIterator1 ) );
-    BOOST_CHECK( comparisonFunctor( *mapIterator2, *mapIterator3 ) );
-    BOOST_CHECK( !comparisonFunctor( *mapIterator3, *mapIterator1 ) );
-
-    // Check that comparing the same value yields false (strictly "less than" comparison).
-    BOOST_CHECK( !comparisonFunctor( *mapIterator1, *mapIterator1 ) );
-}
-
-//! Test implementation of functor to compare two values in a DoubleKeyDoubleValue map wrt a
-//! reference point.
-BOOST_AUTO_TEST_CASE( testDoubleKeyDoubleValueMapValueRelativeDistanceComparisonFunctor )
-{
-    // Set double-key, double-value map.
-    basics::DoubleKeyDoubleValueMap testMap;
-    testMap[ -2.1 ] = 0.99;
-    testMap[ 1.6 ] = -9.44;
-    testMap[ 3.2 ] = 12.7;
-
-    // Declare functor object for testing purposes.
-    basics::CompareDoubleKeyDoubleValueMapRelativeDistances comparisonFunctor( 1.2 );
-
-    // Declare map iterators.
-    basics::DoubleKeyDoubleValueMap::iterator mapIterator1 = testMap.begin( );
-    basics::DoubleKeyDoubleValueMap::iterator mapIterator2 = testMap.begin( );
-    mapIterator2++;
-    basics::DoubleKeyDoubleValueMap::iterator mapIterator3 = testMap.begin( );
-    mapIterator3++;
-    mapIterator3++;
-
-    // Run a few checks to ensure that functor is performing as expected.
-    BOOST_CHECK( !comparisonFunctor( *mapIterator2, *mapIterator1 ) );
-    BOOST_CHECK( comparisonFunctor( *mapIterator2, *mapIterator3 ) );
-    BOOST_CHECK( !comparisonFunctor( *mapIterator3, *mapIterator1 ) );
-
-    // Check that comparing the same value yields false (strictly "less than" comparison).
-    BOOST_CHECK( !comparisonFunctor( *mapIterator1, *mapIterator1 ) );
-}
-
-//! Test implementation of function to convert Julian years to seconds.
-BOOST_AUTO_TEST_CASE( testConvertJulianYearsToSecondsFunction )
-{
-    // Set expected number of seconds in 1 Julian year.
-    const double expectedOneJulianYearInSeconds = 365.25 * 24.0 * 3600.0;
-
-    // Convert 1 Julian year to seconds.
-    const double computedOneJulianYearInSeconds = basics::convertJulianYearsToSeconds( 1.0 );
-
-    // Check that the computed number of seconds matches the expected value.
-    BOOST_CHECK_CLOSE_FRACTION( computedOneJulianYearInSeconds,
-                                expectedOneJulianYearInSeconds,
-                                std::numeric_limits< double >::epsilon( ) );
-}
-
-//! Test implementation of function to convert seconds to Julian years.
-BOOST_AUTO_TEST_CASE( testConvertSecondsToJulianYearsFunction )
-{
-    // Set expected number of Julian years.
-    const double expectedJulianYears = 1.0;
-
-    // Convert seconds.
-    const double computedJulianYears = basics::convertSecondsToJulianYears( 365.25 * 86400.0 );
-
-    // Check that the computed number of Julian years matches the expected value.
-    BOOST_CHECK_CLOSE_FRACTION( computedJulianYears,
-                                expectedJulianYears,
-                                std::numeric_limits< double >::epsilon( ) );
-}
 
 //! Test implementation of function to convert of Full-Width Half-Maximum to standard deviation.
 BOOST_AUTO_TEST_CASE( testConvertFullWidthHalfMaximumToStandardDeviationFunction )

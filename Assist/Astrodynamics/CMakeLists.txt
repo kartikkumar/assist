@@ -42,6 +42,7 @@ set(ASTRODYNAMICS_SOURCES
 set(ASTRODYNAMICS_HEADERS
   "${SRCROOT}${ASTRODYNAMICSDIR}/body.h"
   "${SRCROOT}${ASTRODYNAMICSDIR}/dataUpdater.h"
+  "${SRCROOT}${ASTRODYNAMICSDIR}/unitConversions.h"
 )
 
 # Add static library.
@@ -57,3 +58,6 @@ add_executable(test_DataUpdater "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTes
 setup_unit_test_target(test_DataUpdater "${SRCROOT}${ASTRODYNAMICSDIR}")
 target_link_libraries(test_DataUpdater assist_astrodynamics assist_basics ${Boost_LIBRARIES})
 
+add_executable(test_UnitConversions "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestUnitConversions.cpp")
+setup_unit_test_target(test_UnitConversions "${SRCROOT}${ASTRODYNAMICSDIR}")
+target_link_libraries(test_UnitConversions assist_astrodynamics ${Boost_LIBRARIES})

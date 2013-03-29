@@ -24,60 +24,62 @@
  *
  *    Changelog
  *      YYMMDD    Author            Comment
- *      130323    K. Kumar          File created.
- *      130328    K. Kumar          Completed boiler-plate functions.
+ *      130328    K. Kumar          File created; migrated code from basics.h
  *
  *    References
  *
  *    Notes
- *      The functions in this file serve as boiler plate code to overload operators for 
- *      classes/structs.
  *
  */
 
+#define BOOST_TEST_MAIN
 
-#ifndef ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
-#define ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
+#include <boost/test/floating_point_comparison.hpp>
+#include <boost/test/unit_test.hpp>
+
+#include <Assist/Astrodynamics/unitConversions.h>
 
 namespace assist
 {
-namespace basics
+namespace unit_tests
 {
 
-//
-// Overload operators for pass-by-reference.
-//
+BOOST_AUTO_TEST_SUITE( test_basics )
 
-//! Overload != operator.
-template< typename DataStruct >
-inline bool operator!=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
-{
-    return !( dataStruct1 == dataStruct2 );
-}   
 
-//! Overload > operator.
-template< typename DataStruct >
-inline bool operator>( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
+//! Test implementation of function to convert Julian years to seconds.
+BOOST_AUTO_TEST_CASE( testConvertJulianYearsToSecondsFunction )
 {
-    return ( !( dataStruct1 < dataStruct2 ) || !( dataStruct1 == dataStruct1 ) );
-    // return !( dataStruct1 < dataStruct2 );
+    // Set expected number of seconds in 1 Julian year.
+    const double expectedOneJulianYearInSeconds = 365.25 * 24.0 * 3600.0;
+
+    // Convert 1 Julian year to seconds.
+    const double computedOneJulianYearInSeconds 
+    		= astrodynamics::convertJulianYearsToSeconds( 1.0 );
+
+    // Check that the computed number of seconds matches the expected value.
+    BOOST_CHECK_CLOSE_FRACTION( computedOneJulianYearInSeconds,
+                                expectedOneJulianYearInSeconds,
+                                std::numeric_limits< double >::epsilon( ) );
 }
 
-//! Overload <= operator.
-template< typename DataStruct >
-inline bool operator<=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
+//! Test implementation of function to convert seconds to Julian years.
+BOOST_AUTO_TEST_CASE( testConvertSecondsToJulianYearsFunction )
 {
-    return ( ( dataStruct1 < dataStruct2 ) || ( dataStruct1 == dataStruct1 ) );
+    // Set expected number of Julian years.
+    const double expectedJulianYears = 1.0;
+
+    // Convert seconds.
+    const double computedJulianYears 
+    		= astrodynamics::convertSecondsToJulianYears( 365.25 * 86400.0 );
+
+    // Check that the computed number of Julian years matches the expected value.
+    BOOST_CHECK_CLOSE_FRACTION( computedJulianYears,
+                                expectedJulianYears,
+                                std::numeric_limits< double >::epsilon( ) );
 }
 
-//! Overload >= operator.
-template< typename DataStruct >
-inline bool operator>=( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
-{
-    return !( dataStruct1 < dataStruct1 );
-}
+BOOST_AUTO_TEST_SUITE_END( )
 
-} // namespace basics
+} // namespace unit_tests
 } // namespace assist
-
-#endif // ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
