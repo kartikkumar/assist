@@ -48,7 +48,7 @@ namespace assist
 namespace unit_tests
 {
 
-using namespace basics;
+using namespace basics::operator_overload_functions;
 
 //! Define test data struct.
 struct TestData
@@ -64,9 +64,6 @@ public:
 protected:
 private:
 };
-
-//! Define typedef for shared-pointer to TestData.
-typedef boost::shared_ptr< TestData > TestDataPointer;
 
 //! Overload == operator for TestData struct.
 inline bool operator==( const TestData& testData1, const TestData& testData2 )

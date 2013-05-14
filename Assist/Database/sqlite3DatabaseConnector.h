@@ -90,11 +90,10 @@ public:
     void execute( const std::string& sqlCommand )
     {
         // Check if sql statement exited with an error message and throw runtime error if necessary.
-        if ( sqlite3_exec( database, sqlCommand.c_str( ), 0, 0, &databaseErrorMessage )
+        if ( sqlite3_exec( database, sqlCommand.c_str( ), NULL, 0, &databaseErrorMessage )
              != SQLITE_OK )
         {
             sqlite3_free( databaseErrorMessage );
-            finalizeStatement( );
             closeDatabase( );
             boost::throw_exception( boost::enable_error_info(
                                         std::runtime_error( "Statement execution failed!" ) ) );

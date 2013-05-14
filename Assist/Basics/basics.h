@@ -47,8 +47,6 @@
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
-#include "Assist/Basics/commonTypedefs.h"
-
 namespace assist
 {
 namespace basics

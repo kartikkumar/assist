@@ -25,10 +25,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      130211    K. Kumar          File created; migrated code from basics.h.
+ *      130329    K. Kumar          Added Julian days <-> seconds conversions.
  *
  *    References
- *      Wikipedia. Full width at half maximum,
- *          http://en.wikipedia.org/wiki/Full_width_at_half_maximum, last accessed: 8th Mar, 2013.
  *
  *    Notes
  *
@@ -62,6 +61,29 @@ inline double convertSecondsToJulianYears( const double seconds )
 {
     return seconds / tudat::basic_astrodynamics::physical_constants::JULIAN_YEAR;
 }	
+
+
+//! Convert Julian days to seconds.
+/*!
+ * Converts Julian days to seconds.
+ * \param julianYears Julian days to convert.
+ * \return Number of seconds corresponding to Julian days given as input.
+ */
+inline double convertJulianDaysToSeconds( const double julianDays )
+{
+    return julianDays * tudat::basic_astrodynamics::physical_constants::JULIAN_DAY;
+}
+
+//! Convert seconds to Julian days.
+/*!
+ * Converts seconds to Julian days.
+ * \param seconds Seconds to convert.
+ * \return Number of Julian days corresponding to seconds given as input.
+ */
+inline double convertSecondsToJulianDays( const double seconds )
+{
+    return seconds / tudat::basic_astrodynamics::physical_constants::JULIAN_DAY;
+}   
 
 
 } // namespace astrodynamics

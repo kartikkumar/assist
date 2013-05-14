@@ -39,9 +39,13 @@
 #ifndef ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
 #define ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
 
+#include <boost/shared_ptr.hpp>
+
 namespace assist
 {
 namespace basics
+{
+namespace operator_overload_functions
 {
 
 //
@@ -60,7 +64,6 @@ template< typename DataStruct >
 inline bool operator>( const DataStruct& dataStruct1, const DataStruct& dataStruct2 )
 {
     return ( !( dataStruct1 < dataStruct2 ) || !( dataStruct1 == dataStruct1 ) );
-    // return !( dataStruct1 < dataStruct2 );
 }
 
 //! Overload <= operator.
@@ -77,6 +80,7 @@ inline bool operator>=( const DataStruct& dataStruct1, const DataStruct& dataStr
     return !( dataStruct1 < dataStruct1 );
 }
 
+} // namespace operator_overload_functions
 } // namespace basics
 } // namespace assist
 
