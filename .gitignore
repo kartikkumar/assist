@@ -48,3 +48,4 @@ qtcreator-build/
 debug/
 CMakeLists.txt.user
 *.sublime-*
+Documentation/
