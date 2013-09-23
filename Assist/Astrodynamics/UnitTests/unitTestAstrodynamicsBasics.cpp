@@ -5,8 +5,7 @@
  *
  *    Changelog
  *      YYMMDD    Author            Comment
- *      130211    K. Kumar          File created.
- *      130308    K. Kumar          Added unit test for various free functions.
+ *      130923    K. Kumar          File created.
  *
  *    References
  *
@@ -16,40 +15,22 @@
 
 #define BOOST_TEST_MAIN
 
-#include <map>
-#include <typeinfo>
+#include <limits>
 
 #include <boost/test/floating_point_comparison.hpp>
-#include <boost/test/unit_test.hpp>
+#include <boost/test/unit_test.hpp> 
 
-#include "Assist/Basics/basics.h"
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h> 
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h> 
+
+#include "Assist/Astrodynamics/astrodynamicsBasics.h"
 
 namespace assist
 {
 namespace unit_tests
 {
 
-BOOST_AUTO_TEST_SUITE( test_basics )
-
-//! Test implementation of function to convert of Full-Width Half-Maximum to standard deviation.
-BOOST_AUTO_TEST_CASE( testConvertFullWidthHalfMaximumToStandardDeviationFunction )
-{
-    // Set FWHM.
-    const double fullWidthHalfMaximum = 10.0;
-
-    // Set expected standard deviation for specified FWHM.
-    const double expectedStandardDeviation
-            = fullWidthHalfMaximum / ( 2.0 * std::sqrt( 2.0 * std::log( 2.0 ) ) );
-
-    // Compute standard deviation from FWHM.
-    const double computedStandardDeviation
-            = basics::convertFullWidthHalfMaximumToStandardDeviation( fullWidthHalfMaximum );
-
-    // Check that the computed standard deviation matches the expected value.
-    BOOST_CHECK_CLOSE_FRACTION( computedStandardDeviation,
-                                expectedStandardDeviation,
-                                std::numeric_limits< double >::epsilon( ) );
-}
+BOOST_AUTO_TEST_SUITE( test_astrodynamics_basics )
 
 //! Test implementation of function to compute mass of sphere of uniform density.
 BOOST_AUTO_TEST_CASE( testComputeMassOfSphereFunction )
@@ -66,7 +47,7 @@ BOOST_AUTO_TEST_CASE( testComputeMassOfSphereFunction )
             * radiusOfSphere * radiusOfSphere * radiusOfSphere * bulkDensityOfSphere;
 
     // Compute mass of sphere [kg].
-    const double computedMassOfSphere = basics::computeMassOfSphere(
+    const double computedMassOfSphere = astrodynamics::computeMassOfSphere(
                 radiusOfSphere, bulkDensityOfSphere );
 
     // Check if computed mass of sphere matches expected value.
@@ -86,7 +67,7 @@ BOOST_AUTO_TEST_CASE( testComputeGravitationalParameterFunction )
 
     // Compute gravitational parameter of body [m^3/s^2].
     const double computedGravitationalParameter
-            = basics::computeGravitationalParameter( massOfBody );
+            = astrodynamics::computeGravitationalParameter( massOfBody );
 
     // Check that computed gravitational parameter of body matches expected value.
     BOOST_CHECK_CLOSE_FRACTION( computedGravitationalParameter, expectedGravitationalParameter,

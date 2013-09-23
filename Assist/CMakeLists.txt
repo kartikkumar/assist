@@ -2,6 +2,7 @@
  #    Copyright (c) 2010-2013, Delft University of Technology
  #    All rights reserved.
  #    See COPYING for license details.
+ #
  #    Changelog
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
@@ -135,6 +136,7 @@ install(FILES ${CODEROOT}/LICENSE ${CODEROOT}/NOTICE ${CODEROOT}/README
 set(ASTRODYNAMICSDIR "/Astrodynamics")
 set(BASICSDIR "/Basics")
 set(INPUTOUTPUTDIR "/InputOutput")
+set(MATHEMATICSDIR "/Mathematics")
 
 # Include the top-level directories.
 include_directories(AFTER
@@ -221,7 +223,7 @@ if(BUILD_DOCUMENTATION)
 endif()
 
 # Set sub-directories.
-set(SUBDIRS ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTOUTPUTDIR})
+set(SUBDIRS ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTOUTPUTDIR} ${MATHEMATICSDIR})
 
 # Add sub-directories to CMake process.
 foreach(CURRENT_SUBDIR ${SUBDIRS})

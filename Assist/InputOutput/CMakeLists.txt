@@ -29,10 +29,10 @@ add_library(assist_input_output STATIC ${INPUTOUTPUT_SOURCES} ${INPUTOUTPUT_HEAD
 setup_library_target(assist_input_output "${SRCROOT}${INPUTOUTPUTDIR}")
 
 # Add unit tests.
-add_executable(test_Basic_Input_Output "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestBasicInputOutput.cpp")
-setup_unit_test_target(test_Basic_Input_Output "${SRCROOT}${INPUTOUTPUTDIR}")
-target_link_libraries(test_Basic_Input_Output assist_input_output assist_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
-
-#add_executable(test_CommonTypedefs "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestCommonTypedefs.cpp")
-#setup_unit_test_target(test_CommonTypedefs "${SRCROOT}${INPUTOUTPUTDIR}")
-#target_link_libraries(test_CommonTypedefs assist_input_output ${Boost_LIBRARIES})
+add_executable(test_BasicInputOutput 
+               "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestBasicInputOutput.cpp")
+setup_unit_test_target(test_BasicInputOutput "${SRCROOT}${INPUTOUTPUTDIR}")
+target_link_libraries(test_BasicInputOutput 
+                      assist_input_output assist_basics 
+                      ${TUDAT_CORE_LIBRARIES}
+                      ${Boost_LIBRARIES})

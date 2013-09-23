@@ -19,7 +19,7 @@
 #include <stdexcept>
 #include <string>
 
- #include "Assist/Basics/commonTypedefs.h"
+#include "Assist/Basics/commonTypedefs.h"
 
 #ifndef ASSIST_COMPARISON_FUNCTIONS_H
 #define ASSIST_COMPARISON_FUNCTIONS_H
