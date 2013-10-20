@@ -99,7 +99,7 @@ if(NOT LIB_ROOT)
   set(LIB_ROOT "${PROJECT_BINARY_DIR}/../lib")
 endif()
 if(NOT BIN_ROOT)
-  set(BIN_ROOT "${PROJECT_BINARY_DIR}/../lib")
+  set(BIN_ROOT "${PROJECT_BINARY_DIR}/../bin")
 endif()
 
 # Set the global macros for setting up targets.
