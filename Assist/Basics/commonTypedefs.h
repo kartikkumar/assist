@@ -37,10 +37,10 @@ typedef std::map< double, double > DoubleKeyDoubleValueMap;
 //! Typedef for double-key, double-value pair.
 typedef std::pair< double, double > DoubleKeyDoubleValuePair;
 
-//! Typedef for double-key, Vector6d-value map.
+//! Typedef for double-key, Vector3d-value map.
 typedef std::map< double, Eigen::Vector3d > DoubleKeyVector3dValueMap;
 
-//! Typedef for double-key, Vector3d-value map.
+//! Typedef for double-key, Vector6d-value map.
 typedef std::map< double, tudat::basic_mathematics::Vector6d > DoubleKeyVector6dValueMap;
 
 } // namespace basics
