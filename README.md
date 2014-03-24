@@ -79,9 +79,6 @@ Once you've made your great commits:
    branch
 5. That's it!
 
-You might want to checkout Resque's [Contributing][cb] wiki page for information
-on coding standards, new features, etc.
-
 License
 ------
 
