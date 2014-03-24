@@ -13,20 +13,19 @@ Requirements
 | Name                                                                     | Version       |
 | -------------                                                            |:-------------:|
 | [GCC](http://gcc.gnu.org "GCC homepage")                                 | 4.8           |
-| [`CMake`](http://www.cmake.org/ "CMake homepage")                        | 2.8.12        |
-| [`Eigen`](http://eigen.tuxfamily.org "Eigen's homepage")                 | 3.2.1         |
-| [`Eigen`](http://eigen.tuxfamily.org "Eigen's homepage")                 | 3.2.1         |
-| [`Boost`](http://www.boost.org "Boost's homepage")                       | 1.55.0        |
-| [`Tudat & Tudat Core`](http://tudat.tudelft.nl "Tudat project homepage") | [2a2720](https://github.com/kartikkumar/tudat-svn-mirror/tree/54dc69cd91e84c2a9cddc4caf9f0e86aba2a2720) & [bec885](https://github.com/kartikkumar/tudatCore-svn-mirror/tree/184a180d7213aeb021d672b7b92b0733a4bec885) |
+| [CMake](http://www.cmake.org/ "CMake homepage")                        | 2.8.12        |
+| [Eigen](http://eigen.tuxfamily.org "Eigen's homepage")                 | 3.2.1         |
+| [Boost](http://www.boost.org "Boost's homepage")                       | 1.55.0        |
+| [Tudat & Tudat Core](http://tudat.tudelft.nl "Tudat project homepage") | [2a2720](https://github.com/kartikkumar/tudat-svn-mirror/tree/54dc69cd91e84c2a9cddc4caf9f0e86aba2a2720) & [bec885](https://github.com/kartikkumar/tudatCore-svn-mirror/tree/184a180d7213aeb021d672b7b92b0733a4bec885) |
 
 Alternative C++ compilers may be used, however they haven't been tested to date.
 
 Installation
 ------
 
-The easiest way to install the Assist library is to simply clone the repository and run `CMake`. This assumes that [`Eigen`](http://eigen.tuxfamily.org "Eigen's homepage"), [`Boost`](http://www.boost.org "Boost's homepage"), [`Tudat & Tudat Core`](http://tudat.tudelft.nl "Tudat project homepage") have been installed and can either be found through the system path or through relative paths (see `CMakeModules` directory included in the Assist project). 
+The easiest way to install the Assist library is to simply clone the repository and run `CMake`. This assumes that [Eigen](http://eigen.tuxfamily.org "Eigen's homepage"), [Boost](http://www.boost.org "Boost's homepage"), [Tudat & Tudat Core](http://tudat.tudelft.nl "Tudat project homepage") have been installed and can either be found through the system path or through relative paths (see `CMakeModules` directory included in the Assist project). 
 
-In addition, you must have a C++ compiler and the [`CMake`](http://www.cmake.org/ "CMake homepage") tool needs to be installed on the system path. 
+In addition, you must have a C++ compiler and the [CMake](http://www.cmake.org/ "CMake homepage") tool needs to be installed on the system path. 
 
 To clone the `Assist` library, simply execute the following from your terminal:
 
@@ -66,7 +65,7 @@ The static libraries reside in `lib` directory in the project root.
 Documentation
 -------------
 
-You can pass the `-DBUILD_DOCUMENTATION=on` option to `CMake` to build the [`Doxygen`](http://www.doxygen.org "Doxygen homepage") locally.
+You can pass the `-DBUILD_DOCUMENTATION=on` option to `CMake` to build the [Doxygen](http://www.doxygen.org "Doxygen homepage") documentation locally.
 
 Contributing
 ------------
