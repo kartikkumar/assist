@@ -47,7 +47,7 @@ inline double convertSecondsToJulianYears( const double seconds )
 //! Convert Julian days to seconds.
 /*!
  * Converts Julian days to seconds.
- * \param julianYears Julian days to convert.
+ * \param julianDays Julian days to convert.
  * \return Number of seconds corresponding to Julian days given as input.
  */
 inline double convertJulianDaysToSeconds( const double julianDays )
