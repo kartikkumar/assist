@@ -66,7 +66,7 @@ The static libraries reside in `lib` directory in the project root.
 Documentation
 -------------
 
-You can pass the `-DBUILD_DOCUMENTATION=on` option to `CMake` to build the (`Doxygen`)[http://www.doxygen.org "Doxygen homepage"] locally.
+You can pass the `-DBUILD_DOCUMENTATION=on` option to `CMake` to build the [`Doxygen`](http://www.doxygen.org "Doxygen homepage") locally.
 
 Contributing
 ------------
