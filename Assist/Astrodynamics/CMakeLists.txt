@@ -22,8 +22,6 @@ set(ASTRODYNAMICS_SOURCES
 # Set header files.
 set(ASTRODYNAMICS_HEADERS
   "${SRCROOT}${ASTRODYNAMICSDIR}/astrodynamicsBasics.h"
-  "${SRCROOT}${ASTRODYNAMICSDIR}/body.h"
-  "${SRCROOT}${ASTRODYNAMICSDIR}/dataUpdater.h"
   "${SRCROOT}${ASTRODYNAMICSDIR}/unitConversions.h"
 )
 
@@ -36,14 +34,6 @@ add_executable(test_AstrodynamicsBasics
                "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestAstrodynamicsBasics.cpp")
 setup_unit_test_target(test_AstrodynamicsBasics "${SRCROOT}${ASTRODYNAMICSDIR}")
 target_link_libraries(test_AstrodynamicsBasics assist_astrodynamics ${Boost_LIBRARIES})
-
-add_executable(test_Body "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestBody.cpp")
-setup_unit_test_target(test_Body "${SRCROOT}${ASTRODYNAMICSDIR}")
-target_link_libraries(test_Body assist_astrodynamics assist_basics ${Boost_LIBRARIES})
-
-add_executable(test_DataUpdater "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestDataUpdater.cpp")
-setup_unit_test_target(test_DataUpdater "${SRCROOT}${ASTRODYNAMICSDIR}")
-target_link_libraries(test_DataUpdater assist_astrodynamics assist_basics ${Boost_LIBRARIES})
 
 add_executable(test_UnitConversions 
                "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestUnitConversions.cpp")
