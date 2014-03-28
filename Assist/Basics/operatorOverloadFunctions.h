@@ -1,21 +1,9 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130323    K. Kumar          File created.
- *      130328    K. Kumar          Completed boiler-plate functions.
- *
- *    References
- *
- *    Notes
- *      The functions in this file serve as boiler plate code to overload operators for 
- *      classes/structs.
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
-
 
 #ifndef ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
 #define ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
@@ -66,3 +54,8 @@ inline bool operator>=( const DataStruct& dataStruct1, const DataStruct& dataStr
 } // namespace assist
 
 #endif // ASSIST_OPERATOR_OVERLOAD_FUNCTIONS_H
+
+/*
+ *    The functions in this file serve as boiler plate code to overload operators for 
+ *    classes/structs.
+ */

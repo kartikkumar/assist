@@ -1,17 +1,8 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130211    K. Kumar          File created; migrated code from basics.h.
- *      130329    K. Kumar          Added Julian days <-> seconds conversions.
- *
- *    References
- *
- *    Notes
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
 
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
@@ -43,7 +34,6 @@ inline double convertSecondsToJulianYears( const double seconds )
     return seconds / tudat::basic_astrodynamics::physical_constants::JULIAN_YEAR;
 }	
 
-
 //! Convert Julian days to seconds.
 /*!
  * Converts Julian days to seconds.
@@ -65,7 +55,6 @@ inline double convertSecondsToJulianDays( const double seconds )
 {
     return seconds / tudat::basic_astrodynamics::physical_constants::JULIAN_DAY;
 }   
-
 
 } // namespace astrodynamics
 } // namespace assist

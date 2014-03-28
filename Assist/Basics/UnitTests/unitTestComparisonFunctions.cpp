@@ -1,25 +1,14 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130314    K. Kumar          File created.
- *      130323    K. Kumar          Completed unit tests for checkGreaterThan() and checkLessThan()
- *                                  functions.
- *
- *    References
- *
- *    Notes
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
-
-#define BOOST_TEST_MAIN
 
 #include <stdexcept>
 #include <string>
 
+#include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 
 #include "Assist/Basics/commonTypedefs.h"

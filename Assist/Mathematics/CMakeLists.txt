@@ -1,17 +1,7 @@
- #    
- #    Copyright (c) 2010-2013, Delft University of Technology
+ #    Copyright (c) 2010-2014, Delft University of Technology
+ #    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  #    All rights reserved.
- #    See COPYING for license details.
- #
- #    Changelog
- #      YYMMDD    Author            Comment
- #      110820    S.M. Persson      File created.
- #      130923    K. Kumar          Adapted file for Assist/Mathematics.
- #
- #    References
- #
- #    Notes
- #
+ #    See http://bit.ly/1jern3m for license details.
 
 # Set source files.
 set(MATHEMATICS_SOURCES
@@ -23,13 +13,19 @@ set(MATHEMATICS_HEADERS
   "${SRCROOT}${MATHEMATICSDIR}/statistics.h"
 )
 
+# Set unit test files.
+set(MATHEMATICS_UNIT_TESTS
+    "${SRCROOT}${MATHEMATICSDIR}/UnitTests/unitTestMathematics.cpp"
+    "${SRCROOT}${MATHEMATICSDIR}/UnitTests/unitTestStatistics.cpp"
+)
+
 # Add static library.
 add_library(assist_mathematics STATIC ${MATHEMATICS_SOURCES} ${MATHEMATICS_HEADERS})
-setup_library_target(assist_mathematics "${SRCROOT}${MATHEMATICSDIR}")
+setup_library_target(assist_mathematics)
 
 # Add unit tests.
-add_executable(test_Statistics "${SRCROOT}${MATHEMATICSDIR}/UnitTests/unitTestStatistics.cpp")
-setup_unit_test_target(test_Statistics "${SRCROOT}${MATHEMATICSDIR}")
-target_link_libraries(test_Statistics 
+add_executable(test_Mathematics ${MATHEMATICS_UNIT_TESTS})
+setup_unit_test_target(test_Mathematics)
+target_link_libraries(test_Mathematics 
                       assist_mathematics 
                       ${Boost_LIBRARIES})

@@ -1,19 +1,9 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130211    K. Kumar          File created.
- *
- *    References
- *
- *    Notes
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
-
-#define BOOST_TEST_MAIN
 
 #include <iostream>
 #include <string>
@@ -21,9 +11,8 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "Assist/Basics/basics.h"
-
 #include "Assist/InputOutput/basicInputOutput.h"
+#include "Assist/InputOutput/rootPath.h"
 
 namespace assist
 {
@@ -139,7 +128,7 @@ BOOST_AUTO_TEST_CASE( testInputFileReadAndFilterFunction )
     {
         // Set absolute path to test input file.
         const std::string absolutePathTestInputFile
-                = basics::getAssistRootPath( )
+                = input_output::getAssistRootPath( )
                 + "/InputOutput/UnitTests/testInputFileDefaultCommentCharacter.txt";
 
         // Set expected filtered string.
@@ -160,7 +149,7 @@ BOOST_AUTO_TEST_CASE( testInputFileReadAndFilterFunction )
     {
         // Set absolute path to test input file.
         const std::string absolutePathTestInputFile
-                = basics::getAssistRootPath( )
+                = input_output::getAssistRootPath( )
                 + "/InputOutput/UnitTests/testInputFileCustomCommentCharacter.txt";
 
         // Set expected filtered string.

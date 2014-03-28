@@ -1,19 +1,10 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130314    K. Kumar          File created.
- *      130322    K. Kumar          Corrected and updated Doxygen comments for functions.
- *
- *    References
- *
- *    Notes
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
-
+ 
 #include <limits>
 #include <sstream>
 #include <stdexcept>

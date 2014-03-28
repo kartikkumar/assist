@@ -1,20 +1,9 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130211    K. Kumar          File created.
- *
- *    References
- *
- *    Notes
- *      These tests are simply to ensure that the typedef definitions are not accidentally altered.
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
-
-#define BOOST_TEST_MAIN
 
 #include <map>
 #include <typeinfo>
@@ -56,3 +45,7 @@ BOOST_AUTO_TEST_SUITE_END( )
 
 } // namespace unit_tests
 } // namespace assist
+
+/*
+ *    These tests are simply to ensure that the typedef definitions are not accidentally altered.
+ */

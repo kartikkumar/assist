@@ -1,25 +1,15 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130323    K. Kumar          File created.
- *      130328    K. Kumar          Completed unit tests for boiler plate functions.
- *
- *    References
- *
- *    Notes
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
-
-#define BOOST_TEST_MAIN
 
 #include <iostream>
 
 #include <boost/make_shared.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 
 #include "Assist/Basics/operatorOverloadFunctions.h"

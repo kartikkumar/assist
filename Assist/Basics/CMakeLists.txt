@@ -1,53 +1,35 @@
- #    
- #    Copyright (c) 2010-2013, Delft University of Technology
+ #    Copyright (c) 2010-2014, Delft University of Technology
+ #    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  #    All rights reserved.
- #    See COPYING for license details.
- #
- #    Changelog
- #      YYMMDD    Author            Comment
- #      110820    S.M. Persson      File created.
- #      130211    K. Kumar          Adapted file to work with GeneralTools/Basics.
- #      130320    K. Kumar          Renamed static library to assist*.
- #
- #    References
- #
- #    Notes
- #
+ #    See http://bit.ly/1jern3m for license details.
 
 # Set source files.
-set(BASICS_SOURCES
-  "${SRCROOT}${BASICSDIR}/void.cpp"
-)
+# !!! COMMENTED OUT SINCE THERE ARE NO SOURCE FILES IN THIS DIRECTORY !!!
+#set(BASICS_SOURCES
+#)
 
 # Set header files.
 set(BASICS_HEADERS
-  "${SRCROOT}${BASICSDIR}/basics.h"
   "${SRCROOT}${BASICSDIR}/commonTypedefs.h"
   "${SRCROOT}${BASICSDIR}/comparisonFunctions.h"
   "${SRCROOT}${BASICSDIR}/operatorOverloadFunctions.h"
 )
 
+# Set unit test files.
+set(BASICS_UNIT_TESTS
+  "${SRCROOT}${BASICSDIR}/UnitTests/unitTestBasics.cpp"
+  "${SRCROOT}${BASICSDIR}/UnitTests/unitTestCommonTypedefs.cpp"
+  "${SRCROOT}${BASICSDIR}/UnitTests/unitTestComparisonFunctions.cpp"
+  "${SRCROOT}${BASICSDIR}/UnitTests/unitTestOperatorOverloadFunctions.cpp"
+)
+
 # Add static library.
-add_library(assist_basics STATIC ${BASICS_SOURCES} ${BASICS_HEADERS})
-setup_library_target(assist_basics "${SRCROOT}${BASICSDIR}")
+# !!! COMMENTED OUT SINCE THERE ARE NO SOURCE FILES IN THIS DIRECTORY !!!
+#add_library(assist_basics STATIC ${BASICS_SOURCES} ${BASICS_HEADERS})
+#setup_library_target(assist_basics)
 
 # Add unit tests.
-add_executable(test_CommonTypedefs "${SRCROOT}${BASICSDIR}/UnitTests/unitTestCommonTypedefs.cpp")
-setup_unit_test_target(test_CommonTypedefs "${SRCROOT}${BASICSDIR}")
-target_link_libraries(test_CommonTypedefs 
-                      assist_basics 
-                      ${Boost_LIBRARIES})
-
-add_executable(test_ComparisonFunctions 
-               "${SRCROOT}${BASICSDIR}/UnitTests/unitTestComparisonFunctions.cpp")
-setup_unit_test_target(test_ComparisonFunctions "${SRCROOT}${BASICSDIR}")
-target_link_libraries(test_ComparisonFunctions 
-                      assist_basics 
-                      ${Boost_LIBRARIES})
-
-add_executable(test_OperatorOverloadFunctions 
-               "${SRCROOT}${BASICSDIR}/UnitTests/unitTestOperatorOverloadFunctions.cpp")
-setup_unit_test_target(test_OperatorOverloadFunctions "${SRCROOT}${BASICSDIR}")
-target_link_libraries(test_OperatorOverloadFunctions 
-                      assist_basics 
+add_executable(test_Basics ${BASICS_UNIT_TESTS})
+setup_unit_test_target(test_Basics)
+target_link_libraries(test_Basics 
                       ${Boost_LIBRARIES})

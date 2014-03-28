@@ -1,24 +1,7 @@
- #    
- #    Copyright (c) 2010-2013, Delft University of Technology
+ #    Copyright (c) 2010-2014, Delft University of Technology
+ #    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  #    All rights reserved.
- #    See COPYING for license details.
- #
- #    Changelog
- #      YYMMDD    Author            Comment
- #      110820    S.M. Persson      File created.
- #      111025    K. Kumar          Adapted for GeneralTools project.
- #      130320    K. Kumar          Renamed project to GeneralCPlusPlusTools.
- #      130320    K. Kumar          Renamed project to Assist.
- #      130327    K. Kumar          Added BUILD_DOCUMENTATION option for Doxygen html output
- #                                  generation; removed -O3 flag since it is set by "Release"
- #                                  build type if selected; added install steps; re-organized
- #                                  file to isolate user-specified section.
- #      130709    K. Kumar          Removed Database/ sub-directory.
- #
- #    References
- #
- #    Notes
- #
+ #    See http://bit.ly/1jern3m for license details.
 
 # Specify minimum CMake version required.
 cmake_minimum_required(VERSION 2.6)
@@ -103,12 +86,12 @@ if(NOT BIN_ROOT)
 endif()
 
 # Set the global macros for setting up targets.
-macro(setup_library_target target_name CUSTOM_OUTPUT_PATH)
+macro(setup_library_target target_name)
   set_property(TARGET ${target_name} PROPERTY LIBRARY_OUTPUT_DIRECTORY "${LIB_ROOT}")
   set_property(TARGET ${target_name} PROPERTY ARCHIVE_OUTPUT_DIRECTORY "${LIB_ROOT}")
 endmacro(setup_library_target)
 
-macro(setup_unit_test_target target_name CUSTOM_OUTPUT_PATH)
+macro(setup_unit_test_target target_name)
   set_property(TARGET ${target_name} PROPERTY RUNTIME_OUTPUT_DIRECTORY "${BIN_ROOT}/unit_tests")
   get_property(CUSTOM_TEST_PROGRAM_NAME TARGET ${target_name} PROPERTY OUTPUT_NAME)
   add_test("${target_name}" "${BIN_ROOT}/unit_tests/${target_name}")
@@ -166,7 +149,7 @@ if(NOT Boost_USE_STATIC_RUNTIME)
 endif()
 
 # Find Boost libraries on local system.
-find_package(Boost 1.52.0 
+find_package(Boost 1.55.0 
              COMPONENTS thread date_time system unit_test_framework filesystem regex REQUIRED)
 
 # Include Boost directories.

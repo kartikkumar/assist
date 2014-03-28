@@ -1,18 +1,8 @@
 /*    
- *    Copyright (c) 2010-2013, Delft University of Technology
+ *    Copyright (c) 2010-2014, Delft University of Technology
+ *    Copyright (c) 2010-2014, K. Kumar (me@kartikkumar.com)
  *    All rights reserved.
- *    See COPYING for license details.
- *
- *    Changelog
- *      YYMMDD    Author            Comment
- *      130923    K. Kumar          File created (code migrated).
- *
- *    References
- *      Wikipedia. Full width at half maximum,
- *          http://en.wikipedia.org/wiki/Full_width_at_half_maximum, last accessed: 8th Mar, 2013.
- *
- *    Notes
- *
+ *    See http://bit.ly/1jern3m for license details.
  */
 
 #ifndef ASSIST_STATISTICS_H
@@ -56,3 +46,9 @@ double computeStepFunctionWindowAverage( const basics::DoubleKeyDoubleValueMap& 
 } // namespace assist
 
 #endif // ASSIST_STATISTICS_H 
+
+/*
+ *    References
+ *      Wikipedia. Full width at half maximum,
+ *          http://en.wikipedia.org/wiki/Full_width_at_half_maximum, last accessed: 8th Mar, 2013.
+ */
