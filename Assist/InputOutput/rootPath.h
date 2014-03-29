@@ -5,8 +5,8 @@
  *    See http://bit.ly/1jern3m for license details.
  */
 
-#ifndef ASSIST_INPUT_OUTPUT_H
-#define ASSIST_INPUT_OUTPUT_H
+#ifndef ASSIST_ROOT_PATH_H
+#define ASSIST_ROOT_PATH_H
 
 #include <string>
 
@@ -39,4 +39,4 @@ static inline std::string getAssistRootPath( )
 } // namespace input_output
 } // namespace assist
 
-#endif // ASSIST_INPUT_OUTPUT_H
+#endif // ASSIST_ROOT_PATH_H
