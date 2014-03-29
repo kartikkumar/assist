@@ -18,6 +18,7 @@ set(ASTRODYNAMICS_HEADERS
 set(ASTRODYNAMICS_UNIT_TESTS
   "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestAstrodynamics.cpp"
   "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestAstrodynamicsBasics.cpp"
+  "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestHillSphere.cpp"  
   "${SRCROOT}${ASTRODYNAMICSDIR}/UnitTests/unitTestUnitConversions.cpp"
 )
 
