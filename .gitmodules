@@ -1,0 +1,3 @@
+[submodule "CMakeModules"]
+	path = CMakeModules
+	url = git://github.com/kartikkumar/CMakeModules.git
